@@ -1,0 +1,1 @@
+GET     /fetchUrl                   controllers.ServicesController.fullUrl

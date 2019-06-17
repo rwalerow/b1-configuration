@@ -1,0 +1,129 @@
+2019-06-03 22:30:13,958 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-2 - 
+
+! @7c4fj44fm - Internal server error, for (GET) [/fetchUrl] ->
+ 
+play.api.UnexpectedException: Unexpected exception[CreationException: Unable to create injector, see the following errors:
+
+1) An exception was caught and reported. Message: Cannot convert configuration to a services.configuration.Config1. Failures are:
+  at the root:
+    - Key not found: 'service-1'. You might have a misconfigured ProductHint, since the following similar keys were found:
+       - 'service1'
+
+  at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:173)
+
+2) Could not find a suitable constructor in services.configuration.Config1. Classes must have either one (and only one) constructor annotated with @Inject or a zero-argument constructor that is not private.
+  at services.configuration.Config1.class(Config1.scala:4)
+  while locating services.configuration.Config1
+    for the 1st parameter of services.Service1.<init>(Service1.scala:7)
+  while locating services.Service1
+    for the 2nd parameter of controllers.ServicesController.<init>(ServicesController.scala:9)
+  while locating controllers.ServicesController
+    for the 2nd parameter of router.Routes.<init>(Routes.scala:25)
+  at play.api.inject.RoutesProvider$.bindingsFromConfiguration(BuiltinModule.scala:130):
+Binding(class router.Routes to self) (via modules: com.google.inject.util.Modules$OverrideModule -> play.api.inject.guice.GuiceableModuleConversions$$anon$4)
+
+3) Could not find a suitable constructor in services.configuration.Config2. Classes must have either one (and only one) constructor annotated with @Inject or a zero-argument constructor that is not private.
+  at services.configuration.Config2.class(Config2.scala:4)
+  while locating services.configuration.Config2
+    for the 1st parameter of services.Service2.<init>(Service2.scala:7)
+  while locating services.Service2
+    for the 3rd parameter of controllers.ServicesController.<init>(ServicesController.scala:9)
+  while locating controllers.ServicesController
+    for the 2nd parameter of router.Routes.<init>(Routes.scala:25)
+  at play.api.inject.RoutesProvider$.bindingsFromConfiguration(BuiltinModule.scala:130):
+Binding(class router.Routes to self) (via modules: com.google.inject.util.Modules$OverrideModule -> play.api.inject.guice.GuiceableModuleConversions$$anon$4)
+
+3 errors]
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:214)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:144)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:304)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:189)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1262)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:523)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:409)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:599)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:480)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:574)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:539)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:664)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:610)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:579)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) An exception was caught and reported. Message: Cannot convert configuration to a services.configuration.Config1. Failures are:
+  at the root:
+    - Key not found: 'service-1'. You might have a misconfigured ProductHint, since the following similar keys were found:
+       - 'service1'
+
+  at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:173)
+
+2) Could not find a suitable constructor in services.configuration.Config1. Classes must have either one (and only one) constructor annotated with @Inject or a zero-argument constructor that is not private.
+  at services.configuration.Config1.class(Config1.scala:4)
+  while locating services.configuration.Config1
+    for the 1st parameter of services.Service1.<init>(Service1.scala:7)
+  while locating services.Service1
+    for the 2nd parameter of controllers.ServicesController.<init>(ServicesController.scala:9)
+  while locating controllers.ServicesController
+    for the 2nd parameter of router.Routes.<init>(Routes.scala:25)
+  at play.api.inject.RoutesProvider$.bindingsFromConfiguration(BuiltinModule.scala:130):
+Binding(class router.Routes to self) (via modules: com.google.inject.util.Modules$OverrideModule -> play.api.inject.guice.GuiceableModuleConversions$$anon$4)
+
+3) Could not find a suitable constructor in services.configuration.Config2. Classes must have either one (and only one) constructor annotated with @Inject or a zero-argument constructor that is not private.
+  at services.configuration.Config2.class(Config2.scala:4)
+  while locating services.configuration.Config2
+    for the 1st parameter of services.Service2.<init>(Service2.scala:7)
+  while locating services.Service2
+    for the 3rd parameter of controllers.ServicesController.<init>(ServicesController.scala:9)
+  while locating controllers.ServicesController
+    for the 2nd parameter of router.Routes.<init>(Routes.scala:25)
+  at play.api.inject.RoutesProvider$.bindingsFromConfiguration(BuiltinModule.scala:130):
+Binding(class router.Routes to self) (via modules: com.google.inject.util.Modules$OverrideModule -> play.api.inject.guice.GuiceableModuleConversions$$anon$4)
+
+3 errors
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:543)
+	at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:159)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:106)
+	at com.google.inject.Guice.createInjector(Guice.java:87)
+	at com.google.inject.Guice.createInjector(Guice.java:78)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:201)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:156)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:22)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:193)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:185)
+	... 23 common frames omitted
+Caused by: pureconfig.error.ConfigReaderException: Cannot convert configuration to a services.configuration.Config1. Failures are:
+  at the root:
+    - Key not found: 'service-1'. You might have a misconfigured ProductHint, since the following similar keys were found:
+       - 'service1'
+
+	at pureconfig.package$.getResultOrThrow(package.scala:139)
+	at pureconfig.package$.loadConfigOrThrow(package.scala:150)
+	at Module.configure(Module.scala:11)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:61)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:344)
+	at com.google.inject.spi.Elements.getElements(Elements.java:103)
+	at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:173)
+	at com.google.inject.AbstractModule.configure(AbstractModule.java:61)
+	at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:344)
+	at com.google.inject.spi.Elements.getElements(Elements.java:103)
+	at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:137)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:103)
+	... 31 common frames omitted
+2019-06-03 22:30:50,352 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-06-03 22:30:50,356 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev) (no global state)
